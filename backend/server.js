@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const Expense = require("./models/expense");
+require("dotenv").config();
 
 const app = express();
 
@@ -12,8 +13,7 @@ const PORT = 3000;
 
 // MongoDB Connection
 mongoose
-.connect('mongodb://admin:kartik269@ac-oggq6pw-shard-00-00.q9kl6wa.mongodb.net:27017,ac-oggq6pw-shard-00-01.q9kl6wa.mongodb.net:27017,ac-oggq6pw-shard-00-02.q9kl6wa.mongodb.net:27017/?ssl=true&replicaSet=atlas-2e5q3z-shard-0&authSource=admin&appName=Cluster0')
-.then(() => console.log("MongoDB Connected"))
+.connect(process.env.MONGO_URI).then(() => console.log("MongoDB Connected"))
 .catch((err) => console.log(err));
 
 
