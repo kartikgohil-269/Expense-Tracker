@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Expense Tracker</h1>
+
+    <div class="form">
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Expense Title"
+            autocomplete="off"
+            required
+        >
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            min="1"
+            autocomplete="off"
+            required
+        >
+
+        <input
+            type="text"
+            id="category"
+            list="categories"
+            placeholder="Category"
+            autocomplete="off"
+            required
+        >
+
+        <datalist id="categories"></datalist>
+
+        <input
+            type="date"
+            id="date"
+        >
+
+        <button id="addBtn">
+            Add
+        </button>
+
+    </div>
+
+    <div class="toolbar">
+
+        <select id="searchBy">
+            <option value="title">Title</option>
+            <option value="category">Category</option>
+            <option value="amountGreater">Amount ></option>
+            <option value="amountLess">Amount <</option>
+            <option value="date">Date</option>
+            <option value="monthYear">Month-Year</option>
+        </select>
+
+        <span id="searchContainer"></span>
+
+        <select id="sortBy">
+            <option value="">Sort By</option>
+            <option value="newest">Date (Newest)</option>
+            <option value="oldest">Date (Oldest)</option>
+            <option value="high">Amount (High → Low)</option>
+            <option value="low">Amount (Low → High)</option>
+        </select>
+
+    </div>
+
+    <div class="table">
+
+        <div class="heading">
+            <span>Title</span>
+            <span>Amount</span>
+            <span>Category</span>
+            <span>Date</span>
+            <span>Actions</span>
+        </div>
+
+        <div id="expenseList"></div>
+
+    </div>
+
+    <h2 id="total">Total : ₹0</h2>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
